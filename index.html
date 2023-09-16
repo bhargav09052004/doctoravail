@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="project.css">
+    <script src="doctoravail.js"></script>
+    <script src="https://kit.fontawesome.com/cf5834d24e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="sectionHome">
+        <div class="home-header">
+            <h1 class="header-heading">Hospital Online Appointment Platform</h1>
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <a class="navbar-brand" href="#">
+                    <img src="" class="navbar-image" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon ic"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                    <div class="navbar-nav m-auto p-0">
+                        <a class="nav-link active" href="#" onclick="Home()">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#">Locations</a>
+                        <a class="nav-link active" href="#" onclick="onDoctorAvailability()">Find a Doctor</a>
+                        <a class="nav-link active" href="#">Request Appointment</a>
+                        <a class="nav-link active" href="#">Rescheduling Appointment</a>
+                    </div>
+                </div>
+            </nav>
+            <select id="witsec-language" class="form-control">
+                <option value="ar">Arabic</option>
+                <option value="as">Assamese</option>
+                <option value="bn">Bengali (Bangla)</option>
+                <option value="bh">Bihari</option>
+                <option value="bi">Bislama</option>
+                <option value="bs">Bosnian</option>
+                <option value="br">Breton</option>
+                <option value="bg">Bulgarian</option>
+                <option value="my">Burmese</option>
+                <option value="ca">Catalan</option>
+                <option value="ny">Chichewa, Chewa, Nyanja</option>
+                <option value="zh">Chinese</option>
+                <option value="hr">Croatian</option>
+                <option value="cs">Czech</option>
+                <option value="da">Danish</option>
+                <option value="dv">Divehi, Dhivehi, Maldivian</option>
+                <option value="nl">Dutch</option>
+                <option value="dz">Dzongkha</option>
+                <option value="en">English</option>
+                <option value="eo">Esperanto</option>
+                <option value="et">Estonian</option>
+                <option value="fi">Finnish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="el">Greek</option>
+                <option value="gu">Gujarati</option>
+                <option value="hi">Hindi</option>
+                <option value="is">Icelandic</option>
+                <option value="id">Indonesian</option>
+                <option value="ga">Irish</option>
+                <option value="it">Italian</option>
+                <option value="ja">Japanese</option>
+                <option value="kn">Kannada</option>
+                <option value="ks">Kashmiri</option>
+                <option value="ko">Korean</option>
+                <option value="ml">Malayalam</option>
+                <option value="mr">Marathi</option>
+                <option value="mn">Mongolian</option>
+                <option value="ne">Nepali</option>
+                <option value="or">Oriya</option>
+                <option value="fa">Persian (Farsi)</option>
+                <option value="pt">Portuguese</option>
+                <option value="pa">Punjabi (Eastern)</option>
+                <option value="ro">Romanian</option>
+                <option value="ru">Russian</option>
+                <option value="sa">Sanskrit</option>
+                <option value="sr">Serbian</option>
+                <option value="sd">Sindhi</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="th">Thai</option>
+                <option value="bo">Tibetan</option>
+                <option value="ti">Tigrinya</option>
+                <option value="tr">Turkish</option>
+                <option value="tk">Turkmen</option>
+                <option value="uk">Ukrainian</option>
+                <option value="ur">Urdu</option>
+                <option value="vi">Vietnamese</option>
+            </select>
+        </div>
+        <div class="home-header-2">
+            <a style="color:white;">
+                <h1 class="header-heading-2" id="doctoravailability" onclick="onDoctorAvailability()">Doctor Availability</h1>
+            </a>
+            <a>
+                <h1 class="header-heading-2" id="bookingschedule">Booking Schedule</h1>
+            </a>
+            <a>
+                <h1 class="header-heading-2" id="reschedule">Rescheduling Appointment</h1>
+            </a>
+        </div>
+        <div class="home-body" id="homeBody">
+            <div class="home-body-backimage">
+                <div class="home-body-card">
+                    <h1>Hospital XYZ</h1>
+                    <p>Helping our patients and their families get back what matters more</p>
+                    <a href="" style="color:darkblue;">About Hospitals XYZ</a>
+                    <div class="cards text-center">
+                        <div class="card-1">
+                            <h1 class="home-card-heading">What can we help with ?</h1>
+                            <div class="subelement">
+                                <h1 class="subheading-card" onclick=onDoctorAvailability()>Find a doctor</h1>
+                                <i class="fa-solid fa-caret-right"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Request Appointment</h1>
+                                <i class="fa-solid fa-caret-right"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Locations</h1>
+                                <i class="fa-solid fa-caret-right"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Services</h1>
+                                <i class="fa-solid fa-caret-right"></i>
+                            </div>
+
+                            <p style="text-align:left;color:blue;">Insurance,Billing and Payment</p>
+                            <p style="text-align:left;color:blue;">Cost Estimates</p>
+                            <p style="text-align:left;color:blue;">Patient Gateways</p>
+                            <p style="text-align:left;color:blue;">Clinical Trails</p>
+                            <p style="text-align:left;color:blue;">International Patterns</p>
+                        </div>
+                        <div class="card-2">
+                            <img src="https://img.freepik.com/free-photo/medium-shot-scientists-posing-together_23-2148969982.jpg?w=150">
+                            <h1 class="subheading-card">Hospital XYZ is name as Indian News Best Hospital</h1>
+                            <p>Hospital XYZ is recognized as a top hospital in nation by Indian News and Report for 2023-2024</p>
+                            <a href="" class="align-para-card2">Learn more about Ratings</a>
+                        </div>
+                        <div class="card-3">
+                            <img src="https://www.create-health.com.au/uploads/117/35/blog-what-is-endometriosis.jpg?" class="card3-image">
+                            <h1 class="subheading-card">Endometriosis Care:Facing the Missed Disease</h1>
+                            <p>Severe period pains could be a sign of endomitroisis - a lifelong condition that happens when tissue similar to those in the uterine lining grows in other places.Dr Louis Perkins,MD,JD,gynecological surgeon,shares more about this condition and How to treat it</p>
+                            <a href="" style="color:darkblue;">Learn more about Endometriosis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="background-color:#034694;color:white; padding-right:5vw;padding-left:5vw;padding-top:5vh;padding-bottom:5vh;d-flex:flex;flex-direction:column;align-items:center;">
+                <h1 class="text-center body-header" style="text-decoration:underline">CENTERS FOR EXCELLENCE</h1>
+                <ul style="list-style-type:none;display:flex;justify-content:center; flex-wrap:wrap">
+                    <li class="list-type"><a href="#" style="color:white">Cancer Care</a></li>
+                    <li class="list-type"><a href="#" style="color:white">Neuroscience</a></li>
+                    <li class="list-type"><a href="#" style="color:white">Heart and Vascular</a></li>
+                    <li class="list-type"><a href="#" style="color:white">Lung Care</a></li>
+                    <li class="list-type"><a href="#" style="color:white">Orthopedics</a></li>
+                    <li class="list-type"><a href="#" style="color:white">Primary Care</a></li>
+                    <li class="list-type"><a href="#" style="color:white">Women's Health</a></li>
+                </ul>
+                <button style="background-color:darkblue;color:white;padding:15px;">ALL DEPARTMENTS & SERVICES</button>
+
+            </div>
+        </div>
+        <div id="doctoravailpage">
+            <div class="dab">
+                <div class="doctoravail-body-card">
+                    <h1>Find a Doctor</h1>
+                    <p>Find a right doctor for you at any Hospital XYZ Locations and affiliates</p>
+
+                    <div style="display:flex;">
+                        <div style="display:flex;flex-direction:column;">
+                            <label htmlFor="search1" class="labelText">Search For a Condition or Procedure or Doctor Name</label>
+                            <input type="search" id="search1" />
+                        </div>
+                        <p style="margin:5px;"> OR </p>
+                        <div style="display:flex;flex-direction:column;">
+                            <label htmlFor="search2" class="labelText">Search By Address or City or Pincode within 5km</label>
+                            <input type="search" id="search2" />
+                        </div>
+                        <div class="col-12 d-none mt-5" id="spinner">
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="spinner-border" role="status"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex">
+                        <div class="sortBy" style="width:200px;">
+                            <h1 class="doc-appoint-heading">Search by</h1>
+                            <div class="subelement ">
+                                <h1 class="subheading-card pr-3">Name</h1>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Speciality</h1>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Interest</h1>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Location</h1>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Language</h1>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                            <div class="subelement">
+                                <h1 class="subheading-card">Gender</h1>
+                                <i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="row result-countries resultCountries" id="resultCountries"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="hospital-footer-section mt-5 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="text-center text-md-left">
+                        <img src="https://res.cloudinary.com/dmnwhjps3/image/upload/v1694544330/Hospital_logo_medical_health_-_Made_with_PosterMyWall_fyqpcw.png" class="hospital-logo" />
+                        <h1 class="hospital-logo-section-heading mb-3">Hospital XYZ</h1>
+                        <div class="d-flex flex-row justify-content-center justify-content-md-start mb-3">
+                            <div class="hospital-footer-section-icon-container">
+                                <i class="fa-brands fa-facebook icon"></i>
+                            </div>
+                            <div class="hospital-footer-section-icon-container">
+                                <i class="fa-brands fa-x-twitter icon"></i>
+                            </div>
+                            <div class="hospital-footer-section-icon-container">
+                                <i class="fa-brands fa-youtube icon"></i>
+                            </div>
+                            <div class="hospital-footer-section-icon-container">
+                                <i class="fa-brands fa-instagram icon"></i>
+                            </div>
+                            <div class="hospital-footer-section-icon-container">
+                                <i class="fa-brands fa-linkedin icon"></i>
+                            </div>
+                        </div>
+                        <p class="hospital-footer-section-address">
+                            Sector,Colony,City,State- PinCode
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 mt-3">
+                    <ul class="hospital-footer-section-list">
+                        <h1 class="hospital-footer-section-heading mb-3">Hospital XYZ</h1>
+                        <p class="hospital-footer-section-address">
+                            Sector,Colony,City,State- PinCode
+                        </p>
+                        <li style="color:blue;" class="hospital-footer-section-list-item">1234567890|Contact Us</li>
+                        <li class="hospital-footer-section-list-item">General Information:<span class="blue">1234567890</span></li>
+                        <li class="hospital-footer-section-list-item">Request Appointment:<span class="blue">9087654321</span></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3 mt-3">
+                    <ul class="hospital-footer-section-list">
+                        <h1 class="hospital-footer-section-heading mb-3">Centers for Excellence</h1>
+                        <li style="color:blue;" class="hospital-footer-section-list-item blue">Cancer Center</li>
+                        <li class="hospital-footer-section-list-item blue">Heart And Vascular Center</li>
+                        <li class="hospital-footer-section-list-item blue">Lung Center</li>
+                        <li class="hospital-footer-section-list-item blue">NeuroScience Center</li>
+                        <li class="hospital-footer-section-list-item blue">Orthopedic & Arthiritis Center</li>
+                        <li class="hospital-footer-section-list-item blue">Primary Care Center</li>
+                        <li class="hospital-footer-section-list-item blue">Women Health Care</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3 mt-3">
+                    <ul class="hospital-footer-section-list">
+                        <h1 class="hospital-footer-section-heading mb-3">Quick Links</h1>
+                        <li class="hospital-footer-section-list-item"><a href="">Emergency Scheduling</a></li>
+                        <li class="hospital-footer-section-list-item"><a href="">Health Information</a></li>
+                        <li class="hospital-footer-section-list-item"><a href="">Symptom Severity</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="hr-line" />
+            <div class="text-center copyright-box">
+                <i class="fa fa-copyright icon" aria-hidden="true"></i>
+                <span class="hospital-footer-section-copyright">
+                    2023 Hospital XYZ
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
